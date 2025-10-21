@@ -25,7 +25,7 @@ $sql = "CREATE TABLE transactions (
 $execute = $conc->prepare($sql);
 
 if ($execute && $execute->execute()) {
-    echo "Table 'users' created successfully.";
+    echo "Table 'transactions' created successfully.";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating table: " . $conc->error;
 }
