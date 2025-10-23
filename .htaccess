@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /wealthforge/server-side/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+
+<IfModule mod_headers.c>
+    SetEnvIf Origin "http://127\.0\.0\.1:5500$" AccessControlAllowOrigin=$0
+    SetEnvIf Origin "http://127\.0\.0\.1:5501$" AccessControlAllowOrigin=$0
+    Header always set Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
