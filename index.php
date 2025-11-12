@@ -13,7 +13,7 @@ $request = $_GET['route'] ?? '/';
 // Define available API endpoints
 $apis = [
     '/Register' => ['controller' => 'auth_controller', 'method' => 'RegisterUser'],
-    '/Login'    => ['controller' => 'Login_controller', 'method' => 'find_user'],
+    '/Login'    => ['controller' => 'Login_controller', 'method' => 'loginUser'],
 ];
 
 // Check if route exists
